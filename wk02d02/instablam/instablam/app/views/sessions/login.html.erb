@@ -1,0 +1,26 @@
+<h1>Sessions#create</h1>
+<p>Find me in app/views/sessions/create.html.erb</p>
+
+<h1>Login</h1>
+
+<% if @message %>
+  <p><%= @message %></p>
+<% end %>
+
+<form action="<%= sessions_path%>" method="Post">
+
+  <div>
+    <label>Email</label>
+    <input type="text" name="session[email]">
+  </div>
+
+  <div>
+    <label>Password</label>
+    <input type="password" name="session[password]">
+  </div>
+
+  <div>
+    <input type="submit">
+  </div>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+</form>

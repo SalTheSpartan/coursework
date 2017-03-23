@@ -1,0 +1,7 @@
+<form class="" action="<%= picture_comments_path picture %>" method="Post">
+
+  <label for="">Write a comment</label>
+  <textarea name="comment[content]" rows="8" cols="80"></textarea>
+  <input type="submit" name="" value="Post comment">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+</form>

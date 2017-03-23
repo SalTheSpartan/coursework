@@ -1,0 +1,31 @@
+<h1>SHOW</h1>
+
+<div class="picture">
+  <p><%= @picture.user.name %></p>
+  <p>Followers: <%= @picture.user.followers.length %></p>
+  <%= render 'followers/form' , {user: @picture.user , return_to: picture_path(@picture)} %>
+  <p>Picture id:<%= @picture.id %></p>
+  <div id="picture_img">
+    <img src="<%= @picture.img %>" />
+  </div>
+<p><%= @picture.caption %> </p>
+<p>Likes: <%= @picture.likes.length %></p>
+<%= render 'likes/form' , picture: @picture %>
+  <div id="comments">
+  <% @picture.comments.reverse.each do |comment| %>
+    <div class="comment">
+      <p><%= comment.user.name %></p
+      <p><%= comment.content %></p
+
+    </div>
+    <% end %>
+  </div>
+
+  <form action="<%= picture_path @picture %>" method="POST">
+    <input type="submit" value="Delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  </form>
+
+
+<%= render 'comments/form' , picture: @picture %>

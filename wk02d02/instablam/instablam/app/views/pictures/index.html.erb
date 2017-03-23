@@ -1,0 +1,13 @@
+<h1>Pictures#index</h1>
+<p>Find me in app/views/pictures/index.html.erb</p>
+
+
+<div id="pictures">
+<% @picture.each do |picture| %>
+  <div class="picture">
+    <img src="<%= picture.img %>">
+    <p><%= picture.caption %></p>
+
+  </div>
+  <% end %>
+</div>

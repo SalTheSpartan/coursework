@@ -1,0 +1,16 @@
+<h1>Users#create</h1>
+<p>Find me in app/views/users/create.html.erb</p>
+<form class="" action="<%= users_path %>" method="post">
+  Name:<br>
+  <input type="text" name="user[name]" value="">
+  <br>
+  Email:<br>
+  <input type="text" name="user[email]" value="">
+  <br><br>
+  Password:<br>
+  <input type="password" name="user[password]" value="">
+  <br><br>
+
+  <input type="submit" value="Submit">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+</form>
