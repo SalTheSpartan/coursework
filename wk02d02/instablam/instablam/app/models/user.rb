@@ -16,4 +16,7 @@ has_and_belongs_to_many :following,
 
 
 has_many :comments
+
+# Avatar uploader using carrierwave
+mount_uploader :avatar, AvatarUploader
 end

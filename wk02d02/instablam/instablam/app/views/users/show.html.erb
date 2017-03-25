@@ -1,0 +1,30 @@
+<%= @user.name %>
+
+<%= image_tag(@user.avatar.small_avatar)%>
+
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+    My Avatar
+    <p>
+    <%= f.file_field :avatar %>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+
+<!-- <%= form_for :picture, url: pictures_path do |f| %>
+  <p>
+    <%= f.label :img_url %><br>
+    <%= f.text_field :img %>
+  </p>
+
+
+  <p>
+    <%= f.label :caption %><br>
+    <%= f.text_field :caption %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %> -->

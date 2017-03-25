@@ -21,9 +21,14 @@ class PicturesController < ApplicationController
     # @picture.comments.push new_comment
     # @picture.save
     # redirect_to @picture
-    @picture = Picture.new(params.require(:picture).permit(:img, :caption))
+    @picture = Picture.new(params.require(:picture).permit(:image, :caption))
+    @picture.user = current_user
     @picture.save
     redirect_to @picture
+  end
+
+  def new
+    @picture = Picture.new
   end
 
   def edit

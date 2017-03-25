@@ -4,18 +4,16 @@
 
 <h2>New picture form</h2>
 <p>Find me in app/views/portfolio/new.html.erb</p>
-
-<%= form_for :picture, url: pictures_path do |f| %>
-  <p>
-    <%= f.label :img_url %><br>
-    <%= f.text_field :img %>
-  </p>
-
+<%= form_for @picture, html: {multipart: true } do |f| %>
 
   <p>
     <%= f.label :caption %><br>
     <%= f.text_field :caption %>
   </p>
+
+  <p>
+  <%= f.file_field :image %>
+</p>
   <p>
     <%= f.submit %>
   </p>

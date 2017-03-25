@@ -6,7 +6,9 @@
   <%= render 'followers/form' , {user: @picture.user , return_to: picture_path(@picture)} %>
   <p>Picture id:<%= @picture.id %></p>
   <div id="picture_img">
-    <img src="<%= @picture.img %>" />
+    <!-- <img src="<%= @picture.image %>" /> -->
+    <strong>Image:</strong>
+    <%= image_tag @picture.image.thumb.url  %>
   </div>
 <p><%= @picture.caption %> </p>
 <p>Likes: <%= @picture.likes.length %></p>
@@ -21,7 +23,7 @@
     <% end %>
   </div>
 
-  <form action="<%= picture_path @picture %>" method="POST">
+  <form action="<%= picture_path @picture %>" method="POST" >
     <input type="submit" value="Delete">
     <input type="hidden" name="_method" value="DELETE">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
